@@ -265,7 +265,11 @@ static int write_itable(int fd)
     uint32_t _gid = getgid();
     
 	ssize_t ret;
+<<<<<<< HEAD
 	// 1.定义根文件夹的inode，并写进磁盘
+=======
+	// 1.定义根文件夹的inode
+>>>>>>> 0195dab93830a974322df9c20eea95bd24bc6c57
 	struct HUST_inode root_dir_inode;
 	root_dir_inode.mode = S_IFDIR;
 	root_dir_inode.inode_no = HUST_ROOT_INODE_NUM;
@@ -282,7 +286,11 @@ static int write_itable(int fd)
 		perror("write_itable error!\n");
 		return -1;
 	}
+<<<<<<< HEAD
 	// 2.定义onefile的inode信息，并写进磁盘
+=======
+	// 2.定义onefile的inode信息
+>>>>>>> 0195dab93830a974322df9c20eea95bd24bc6c57
 	struct HUST_inode onefile_inode;
 	onefile_inode.mode = S_IFREG;
 	onefile_inode.inode_no = 1;
@@ -324,7 +332,11 @@ static int write_itable(int fd)
 		perror("lseek error\n");
 		return -1;
 	}
+<<<<<<< HEAD
 	// 5. 将三个目录项写进磁盘（根文件夹的block内）。
+=======
+	// 5. 将三个目录项写进根文件夹的block内。
+>>>>>>> 0195dab93830a974322df9c20eea95bd24bc6c57
 	ret = write(fd, &root_dir_c, sizeof(root_dir_c));
 	ret = write(fd, &root_dir_p, sizeof(root_dir_p));
 	ret = write(fd, &file_record, sizeof(file_record));
